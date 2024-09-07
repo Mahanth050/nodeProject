@@ -1,11 +1,7 @@
-const http = require('http');
+var http = require('http');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
-});
-
-server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
-});
+//create a server object:
+http.createServer(function (req, res) {
+  res.write('** Hey my app was deployed :) **'); //write a response to the client
+  res.end(); //end the response
+}).listen(80); //the server object listens on port 80
